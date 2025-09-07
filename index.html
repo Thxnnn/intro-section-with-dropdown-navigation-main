@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Frontend Mentor | Intro section with dropdown navigation</title>
+
+
+
+</head>
+
+<body>
+
+    <header>
+        <nav class="nav-wrapper container">
+            <a href="/"><img src="images/logo.svg" alt=""></a>
+            <ul class="nav-menu">
+                <li>
+                    <button class="btn-features">Features <img src="images/icon-arrow-down.svg" alt=""></button>
+                    <ul class="features-dropdown">
+                        <li>
+                            <img src="images/icon-todo.svg" alt="">
+                            <span>Todo List</span>
+                        </li>
+                        <li>
+                            <img src="images/icon-calendar.svg" alt="">
+                            <span>Calendar</span>
+                        </li>
+                        <li>
+                            <img src="images/icon-reminders.svg" alt="">
+                            <span>Reminders</span>
+                        </li>
+                        <li>
+                            <img src="images/icon-planning.svg" alt="">
+                            <span>Planning</span>
+                        </li>
+                        
+                    </ul>
+                </li>
+                <li>
+                    <button class="btn-company">Company <img src="images/icon-arrow-down.svg" alt=""></button>
+                    <ul class="company-dropdown">
+                        <li>History</li>
+                        <li>Our team</li>
+                        <li>Blog</li>
+                    </ul>
+                </li>
+                <li>Careers</li>
+                <li>About</li>
+            </ul>
+            <ul class="nav-login">
+                <li class="btn-login">Login</li>
+                <li class="btn-regis">Register</li>
+            </ul>
+            <button class="btn-mobile-collapsed">
+                <img src="images/icon-menu.svg" alt="">
+            </button>
+            <ul class="nav-mobile">
+                <li>
+                    <button class="close-menu"><img src="images/icon-close-menu.svg" alt=""></button>
+                </li>
+                <li>
+                    <button class="btn-features-mobile">Features <img src="images/icon-arrow-down.svg" alt=""></button>
+                    <ul class="features-dropdown-mobile">
+                        <li>
+                            <img src="images/icon-todo.svg" alt="">
+                            <span>Todo List</span>
+                        </li>
+                        <li>
+                            <img src="images/icon-calendar.svg" alt="">
+                            <span>Calendar</span>
+                        </li>
+                        <li>
+                            <img src="images/icon-reminders.svg" alt="">
+                            <span>Reminders</span>
+                        </li>
+                        <li>
+                            <img src="images/icon-planning.svg" alt="">
+                            <span>Planning</span>
+                        </li>
+                        
+                    </ul>
+                </li>
+                <li>
+                    <button class="btn-company-mobile">Company <img src="images/icon-arrow-down.svg" alt=""></button>
+                    <ul class="company-dropdown-mobile">
+                        <li>History</li>
+                        <li>Our team</li>
+                        <li>Blog</li>
+                    </ul>
+                </li>
+                <li>Careers</li>
+                <li>About</li>
+                <li class="btn-login">Login</li>
+                <li class="btn-regis">Register</li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <div class="container wrapper">
+        <div class="text">
+            <h1>Make remote work</h1>
+            <p>Get your team in sync, no matter your location. Streamline processes,
+            create team rituals, and watch productivity soar.
+            </p>
+
+            <div class="">
+                <button class="learn-more">Learn more</button>
+
+            </div>
+            <div class="icon">
+                <img src="images/client-databiz.svg" alt="">
+                <img src="images/client-audiophile.svg" alt="">
+                <img src="images/client-meet.svg" alt="">
+                <img src="images/client-maker.svg" alt="">
+            </div>
+        </div>
+        <div class="image">
+            <img src="images/image-hero-desktop.png" alt="" class="image-hero-desktop">
+            <img src="images/image-hero-mobile.png" alt="" class="image-hero-mobile">
+        </div>
+
+    </div>
+    
+
+    
+
+    
+
+    <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="https://github.com/Thxnnn/stats-preview-card-component.git">Thxnnn</a>.
+    </div>
+</body>
+
+</html>
+
+
+<script>
+    document.querySelector(".btn-features").addEventListener("click", function() {
+        document.querySelector(".features-dropdown").classList.toggle("active");
+        document.querySelector(".btn-features img").classList.toggle("rotated");
+    })
+
+    document.querySelector(".btn-company").addEventListener("click", function() {
+        document.querySelector(".company-dropdown").classList.toggle("active");
+        document.querySelector(".btn-company img").classList.toggle("rotated");
+    })
+
+    document.addEventListener("click", function (e) {
+        if (!document.querySelector(".company-dropdown") || !document.querySelector(".btn-company").contains(e.target)) {
+            document.querySelector(".company-dropdown").classList.remove("active");
+            document.querySelector(".btn-company img").classList.remove("rotated");
+            
+        }
+
+         if (!document.querySelector(".features-dropdown") || !document.querySelector(".btn-features").contains(e.target)) {
+            document.querySelector(" .features-dropdown").classList.remove("active");
+            document.querySelector(".btn-features img").classList.remove("rotated");
+
+        }
+    });
+
+
+    document.querySelector(".btn-mobile-collapsed").addEventListener("click", function() {
+        console.log("btn-mobile-collapsed")
+        document.querySelector(".nav-mobile").classList.toggle("active");
+    })
+
+
+    // mobile
+    document.querySelector(".btn-features-mobile").addEventListener("click", function() {
+        document.querySelector(".features-dropdown-mobile").classList.toggle("active");
+        document.querySelector(".btn-features-mobile img").classList.toggle("rotated");
+
+    })
+
+    document.querySelector(".btn-company-mobile").addEventListener("click", function() {
+        document.querySelector(".company-dropdown-mobile").classList.toggle("active");
+        document.querySelector(".btn-company-mobile img").classList.toggle("rotated");
+
+    })
+
+
+    document.querySelector(".close-menu").addEventListener("click", function() {
+        document.querySelector(".nav-mobile").classList.remove("active");
+
+    })
+
+
+</script>
